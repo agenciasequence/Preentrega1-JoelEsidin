@@ -89,7 +89,13 @@ if (fuerzaPersonaje < 8 || fuerzaPersonaje > 15 || isNaN(fuerza)){
     
     while (fuerzaPersonaje < 8 || fuerzaPersonaje > 15 || isNaN(fuerza))
     }
+if (razaPersonaje == "Humano"){
+    fuerzaPersonaje = fuerzaPersonaje + 1
+}
 
+if (razaPersonaje == "Enano"){
+    fuerzaPersonaje = fuerzaPersonaje + 2
+}
 
 //DESTREZA
 
@@ -108,6 +114,14 @@ if (destrezaPersonaje < 8 || destrezaPersonaje > 15 || isNaN(destreza)){
     
     
     while (destrezaPersonaje < 8 || destrezaPersonaje > 15 || isNaN(destreza))
+    }
+
+    if (razaPersonaje == "Humano"){
+        destrezaPersonaje = destrezaPersonaje + 1
+    }
+
+    if (razaPersonaje == "Elfo"){
+        destrezaPersonaje = destrezaPersonaje + 2
     }
 
 //CONSTITUCIÓN
@@ -129,6 +143,13 @@ if (constitucionPersonaje < 8 || constitucionPersonaje > 15 || isNaN(constitucio
     while (constitucionPersonaje < 8 || constitucionPersonaje > 15 || isNaN(constitucion))
     }
 
+    if (razaPersonaje == "Humano"){
+        constitucionPersonaje = constitucionPersonaje + 1
+    }
+
+    if (razaPersonaje == "Enano"){
+        constitucionPersonaje = constitucionPersonaje + 2
+    }
 //INTELIGENCIA
 
 let inteligencia = Number(prompt("Ingrese la stat de INTELIGENCIA de su personaje (es un número del 8 al 15)"))
@@ -146,6 +167,14 @@ if (inteligenciaPersonaje < 8 || inteligenciaPersonaje > 15 || isNaN(inteligenci
     
     
     while (inteligenciaPersonaje < 8 || inteligenciaPersonaje > 15 || isNaN(inteligencia))
+    }
+
+    if (razaPersonaje == "Humano"){
+        inteligenciaPersonaje = inteligenciaPersonaje + 1
+    }
+
+    if (razaPersonaje == "Elfo"){
+        inteligenciaPersonaje = inteligenciaPersonaje + 2
     }
 
 //SABIDURIA
@@ -167,6 +196,10 @@ if (sabiduriaPersonaje < 8 || sabiduriaPersonaje > 15 || isNaN(sabiduria)){
     while (sabiduriaPersonaje < 8 || sabiduriaPersonaje > 15 || isNaN(sabiduria))
     }
 
+    if (razaPersonaje == "Humano"){
+        sabiduriaPersonaje = sabiduriaPersonaje + 1
+    }
+
 //CARISMA
 
 let carisma = Number(prompt("Ingrese la stat de CARISMA de su personaje (es un número del 8 al 15)"))
@@ -184,6 +217,10 @@ if (carismaPersonaje < 8 || carismaPersonaje > 15 || isNaN(carisma)){
     
     
     while (carismaPersonaje < 8 || carismaPersonaje > 15 || isNaN(carisma))
+    }
+
+    if (razaPersonaje == "Humano"){
+        carismaPersonaje = carismaPersonaje + 1
     }
 
 alert("Sus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
@@ -220,7 +257,7 @@ while (volverMenu == 1) {
         //MOSTRAR HOJA DE PERSONAJE
 
         case 1 :
-            alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n Modificador de ataque con espada= " + (2+modFuerza) + "\nDaño con espada: dado de 8 + " + modFuerza + "\n Modificador de ataque con arco= " + (2+modDestreza) + "\nDaño con arco: dado de 8 + " + modDestreza + "\n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
+            alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n Modificador de ataque con espada= " + (2+Math.floor(modFuerza)) + "\nDaño con espada: dado de 8 + " + Math.floor(modFuerza) + "\n Modificador de ataque con arco= " + (2+Math.floor(modDestreza)) + "\nDaño con arco: dado de 8 + " + Math.floor(modDestreza) + "\n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
 
             volverMenu = Number(prompt("Presione 1 para volver al menú.\nPresione 2 para salir"))
             volverChoice = volverMenu
