@@ -242,7 +242,14 @@ if (carismaPersonaje < 8 || carismaPersonaje > 15 || isNaN(carisma)){
 
 alert("Sus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
 
+//CALCULAMOS LOS MODIFICADORES DE ATAQUE
+let modFuerza = (fuerzaPersonaje - 10) / 2
+let modDestreza = (destrezaPersonaje - 10) / 2
+
+
+
 //MENÚ
+
 let volverMenu = 1
 
 while (volverMenu == 1) {
@@ -264,14 +271,108 @@ while (volverMenu == 1) {
 
     switch(menuEleccion){
         case 1 :
-            alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n \n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
+            alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n Modificador de ataque con espada= " + (2+modFuerza) + "\nDaño con espada: dado de 8 + " + modFuerza + "\n Modificador de ataque con arco= " + (2+modDestreza) + "\nDaño con arco: dado de 8 + " + modDestreza + "\n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
+
+            volverMenu = Number(prompt("Presione 1 para volver al menú.\nPresione 2 para salir"))
+            volverChoice = volverMenu
+
+            //VERIFICAMOS DATOS
+
+            if (volverChoice < 1 || volverChoice > 2 || isNaN(volverMenu)){
+
+                do {
+                alert("El valor ingresado es inválido, intente de nuevo")
+                volverMenu = Number(prompt("Presione 1 para volver al menú.\nPresione 2 para salir"))
+                volverChoice = volverMenu
+                }
+            
+            
+                while (volverChoice < 1 || volverChoice > 2 || isNaN(volverMenu))
+                }
+            
+            if (volverMenu == 2) {
+                alert("¡Disfruta de tu campaña!")
+            }
+            break
+        
+
+        case 2 :
+            let elegirAtaque = Number(prompt("1- Calcular ataque con espada \n2- Calcular ataque con arco"))
+            let eleccionAtaque = elegirAtaque
+            
+            //Verificamos si los datos son válidos
+            if (eleccionAtaque < 1 || eleccionAtaque > 2 || isNaN(elegirAtaque)){
+
+            do {
+                alert("El valor ingresado es inválido, intente de nuevo")
+                elegirAtaque = Number(prompt("1- Calcular ataque con espada \n2- Calcular ataque con arco"))
+                eleccionAtaque = elegirAtaque
+                }
+    
+    
+                while (eleccionAtaque < 1 || eleccionAtaque > 2 || isNaN(elegirAtaque))
+                }
+
+            switch(eleccionAtaque) {
+                case 1:
+                let salida = ""
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * max) +1
+
+                }                     
+                for (let i = 1; i < 11; i++) {
+                    salida = salida + "ataque " + i + ": " + (Math.floor(modFuerza) + getRandomInt(8)) + "\n"
+                }
+                alert(salida)
+                           
+                break   
+                    
+                case 2:
+                    
+                let salida1 = ""
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * max) +1
+
+                }                     
+                for (let i = 1; i < 11; i++) {
+                    salida1 = salida1 + "ataque " + i + ": " + (Math.floor(modDestreza) + getRandomInt(8)) + "\n"
+                }
+                alert(salida1)
+                break
+                }
+
+                volverMenu = Number(prompt("Presione 1 para volver al menú.\nPresione 2 para salir"))
+            volverChoice = volverMenu
+
+            //VERIFICAMOS DATOS
+
+            if (volverChoice < 1 || volverChoice > 2 || isNaN(volverMenu)){
+
+                do {
+                alert("El valor ingresado es inválido, intente de nuevo")
+                volverMenu = Number(prompt("Presione 1 para volver al menú.\nPresione 2 para salir"))
+                volverChoice = volverMenu
+                }
+            
+            
+                while (volverChoice < 1 || volverChoice > 2 || isNaN(volverMenu))
+                }
+            
+            if (volverMenu == 2) {
+                alert("¡Disfruta de tu campaña!")
+            }
+
+                break
+            }
         }
 
-        volverMenu = Number(prompt())
+
+        
 
 
 
-}
+
+
 
     
 
