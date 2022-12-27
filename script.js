@@ -21,7 +21,7 @@ do {
 while (clasePersonaje < 1 || clasePersonaje > 4 || isNaN(clase))
 }
 
-let raza = Number (prompt("¿Qué raza es su personaje? \n 1- Humano \n 2- Elfo \n 3- Enano \n 4- Orco"))
+let raza = Number (prompt("¿Qué raza es su personaje? \n 1- Humano (+1 a todas las stats) \n 2- Elfo (+2 a Destreza y +1 Inteligencia) \n 3- Enano (+2 a Constitución y +1 a Sabiduria) \n 4- Semiorco (+2 a Fuerza y +1 a Constitución)"))
     razaPersonaje = raza
 
 //Verificamos también para la raza
@@ -29,7 +29,7 @@ if (razaPersonaje < 1 || razaPersonaje > 4 || isNaN(raza)){
 
 do {
     alert("El valor ingresado es inválido, intente de nuevo")
-    raza = Number (prompt("¿Qué raza es su personaje? \n 1- Humano \n 2- Elfo \n 3- Enano \n 4- Orco"))
+    raza = Number (prompt("¿Qué raza es su personaje? \n 1- Humano (+1 a todas las stats) \n 2- Elfo (+2 a Destreza y +1 Inteligencia) \n 3- Enano (+2 a Constitución y +1 a Sabiduria) \n 4- Semiorco (+2 a Fuerza y +1 a Constitución)"))
     razaPersonaje = raza
 }
 while (razaPersonaje < 1 || razaPersonaje > 4 || isNaN(raza))
@@ -64,7 +64,7 @@ switch(razaPersonaje){
         razaPersonaje = "Enano"
         break
     case 4 :
-        razaPersonaje = "Orco"
+        razaPersonaje = "Semiorco"
 }
 
 alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje)
@@ -93,7 +93,7 @@ if (razaPersonaje == "Humano"){
     fuerzaPersonaje = fuerzaPersonaje + 1
 }
 
-if (razaPersonaje == "Enano"){
+if (razaPersonaje == "Semiorco"){
     fuerzaPersonaje = fuerzaPersonaje + 2
 }
 
@@ -143,7 +143,7 @@ if (constitucionPersonaje < 8 || constitucionPersonaje > 15 || isNaN(constitucio
     while (constitucionPersonaje < 8 || constitucionPersonaje > 15 || isNaN(constitucion))
     }
 
-    if (razaPersonaje == "Humano"){
+    if (razaPersonaje == "Humano" || razaPersonaje == "Semiorco"){
         constitucionPersonaje = constitucionPersonaje + 1
     }
 
@@ -196,7 +196,7 @@ if (sabiduriaPersonaje < 8 || sabiduriaPersonaje > 15 || isNaN(sabiduria)){
     while (sabiduriaPersonaje < 8 || sabiduriaPersonaje > 15 || isNaN(sabiduria))
     }
 
-    if (razaPersonaje == "Humano"){
+    if (razaPersonaje == "Humano" || razaPersonaje == "Enano"){
         sabiduriaPersonaje = sabiduriaPersonaje + 1
     }
 
