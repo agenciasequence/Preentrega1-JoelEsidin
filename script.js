@@ -243,8 +243,35 @@ if (carismaPersonaje < 8 || carismaPersonaje > 15 || isNaN(carisma)){
 alert("Sus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
 
 //MENÚ
+let volverMenu = 1
 
-let menuPersonaje = Number(prompt("¿Qué desea saber de su personaje?"))
+while (volverMenu == 1) {
+    let menuPersonaje = Number(prompt("¿Qué desea saber de su personaje?\n 1-Ver hoja con los datos del personaje\n 2-Simular daño de los ataques"))
+    let menuEleccion = menuPersonaje
+
+    //Verificamos si los datos son válidos
+    if (menuEleccion < 1 || menuEleccion > 2 || isNaN(menuPersonaje)){
+
+        do {
+        alert("El valor ingresado es inválido, intente de nuevo")
+        menuPersonaje = Number(prompt("¿Qué desea saber de su personaje?\n 1-Ver hoja con los datos del personaje\n 2-Simular daño de los ataques"))
+        menuEleccion = menuPersonaje
+        }
+    
+    
+        while (menuEleccion < 1 || menuEleccion > 2 || isNaN(menuPersonaje))
+        }
+
+    switch(menuEleccion){
+        case 1 :
+            alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n \n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
+        }
+
+        volverMenu = Number(prompt())
+
+
+
+}
 
     
 
