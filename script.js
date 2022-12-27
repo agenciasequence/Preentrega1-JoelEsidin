@@ -1,60 +1,6 @@
 //GENERADOR DE PERSONAJES DE DUNGEONS AND DRAGONS
 
 
-
-/* let stat = 0
-let fuerza = 0
-let destreza = 0
-let constitucion = 0
-let inteligencia = 0
-let sabiduria = 0
-let  carisma = 0
-
-for (let i = 0; i < 6; i++) {
-    
-        
-    if (i = 1) {
-        fuerza = Number(prompt("Ingrese la stat de fuerza de su personaje (es un número del 8 al 15)"))
-        stat = fuerza
-        
-        
-    }if (i = 2) {
-        destreza = Number(prompt("Ingrese la stat de destreza de su personaje (es un número del 8 al 15)"))
-        stat = destreza
-         
-    } if (i = 3) {
-        constitucion = Number(prompt("Ingrese la stat de constitución de su personaje (es un número del 8 al 15)"))
-        stat = constitucion
-         
-    } if (i = 4) {
-        inteligencia = Number(prompt("Ingrese la stat de inteligencia de su personaje (es un número del 8 al 15)"))
-        stat = inteligencia
-    } if (i = 5) {
-        sabiduría = Number(prompt("Ingrese la stat de sabiduría de su personaje(es un número del 8 al 15)"))
-        stat = sabiduria
-    } if (i = 6) {
-        carisma = Number(prompt("Ingrese la stat de carisma de su personaje(es un número del 8 al 15)"))
-        stat = carisma
-    }
-    if (stat < 8 || stat > 15 || isNaN(stat)){
-                            
-        alert("ingrese un número válido")
-        i--
-    }
-               
-    }
-
-    alert("su fuerza es " + fuerza)
-
-    function ataqueBase */
-
-    
-
-    /* while (stat < 8 || stat > 15 || stat = NaN) {
-        alert("Ingreso no válido, inténtalo de nuevo")
-    }
-}*/
-
 //Generamos los primeros datos de nuestro personaje
 
 let nombre = String (prompt("Ingrese el nombre de su personaje"))
@@ -270,6 +216,9 @@ while (volverMenu == 1) {
         }
 
     switch(menuEleccion){
+
+        //MOSTRAR HOJA DE PERSONAJE
+
         case 1 :
             alert("Su personaje se llama " + nombre + " y es un " + clasePersonaje + " " + razaPersonaje + "\n Modificador de ataque con espada= " + (2+modFuerza) + "\nDaño con espada: dado de 8 + " + modFuerza + "\n Modificador de ataque con arco= " + (2+modDestreza) + "\nDaño con arco: dado de 8 + " + modDestreza + "\n \nSus stats son:\nFuerza: " + fuerzaPersonaje + "\nDestreza: " + destrezaPersonaje + "\nConstitución: " + constitucionPersonaje + "\nInteligencia: " + inteligenciaPersonaje + "\nSabiduría: " + sabiduriaPersonaje + "\nCarisma: " + carismaPersonaje)
 
@@ -295,6 +244,7 @@ while (volverMenu == 1) {
             }
             break
         
+            //SIMULADOR DE DAÑO CON TIRADA DE DADO
 
         case 2 :
             let elegirAtaque = Number(prompt("1- Calcular ataque con espada \n2- Calcular ataque con arco"))
@@ -314,6 +264,9 @@ while (volverMenu == 1) {
                 }
 
             switch(eleccionAtaque) {
+                
+                //ATAQUE CON ESPADA
+
                 case 1:
                 let salida = ""
                 function getRandomInt(max) {
@@ -328,7 +281,9 @@ while (volverMenu == 1) {
                 break   
                     
                 case 2:
-                    
+                 
+                //ATAQUE CON ARCO
+
                 let salida1 = ""
                 function getRandomInt(max) {
                     return Math.floor(Math.random() * max) +1
